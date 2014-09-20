@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Movie.Question5"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Round 5" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="50"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid HorizontalAlignment="Left" Height="125" Margin="10,27,0,0" VerticalAlignment="Top" Width="436">
+                <Button x:Name="play" Content="&gt;" HorizontalAlignment="Left" Height="124" Margin="154,0,0,0" VerticalAlignment="Top" Width="124" FontSize="30"/>
+                <Button x:Name="next" Content="&gt;&gt;|" HorizontalAlignment="Left" Height="124" Margin="302,0,0,0" VerticalAlignment="Top" Width="124" FontSize="30"/>
+                <Button x:Name="prev" Content="|&lt;&lt;" HorizontalAlignment="Left" Height="124" Margin="10,0,0,0" VerticalAlignment="Top" Width="124" FontSize="30"/>
+            </Grid>
+            <Grid x:Name="op1" HorizontalAlignment="Left" Height="74" Margin="81,228,0,0" VerticalAlignment="Top" Width="301">
+                <Rectangle x:Name="Op1" Fill="#00FF0000" HorizontalAlignment="Left" Height="74" Margin="0" Stroke="White" VerticalAlignment="Top" Width="301" RadiusX="40" RadiusY="40" StrokeThickness="5"/>
+                <Button x:Name="but1" Content="A" HorizontalAlignment="Left" Height="74" Margin="0" VerticalAlignment="Top" Width="301" BorderBrush="Transparent" Click="but1_Click"/>
+            </Grid>
+            <Grid x:Name="op2" HorizontalAlignment="Left" Height="74" Margin="81,337,0,0" VerticalAlignment="Top" Width="301">
+                <Rectangle x:Name="Op2" Fill="#00FF0C00" HorizontalAlignment="Left" Height="74" Margin="0" Stroke="White" VerticalAlignment="Top" Width="301" RadiusX="40" RadiusY="40" StrokeThickness="5"/>
+                <Button x:Name="but2" Content="B" HorizontalAlignment="Left" Height="74" Margin="0" VerticalAlignment="Top" Width="301" BorderBrush="Transparent" Click="but2_Click"/>
+            </Grid>
+            <Grid x:Name="op3" HorizontalAlignment="Left" Height="74" Margin="81,447,0,0" VerticalAlignment="Top" Width="301">
+                <Rectangle x:Name="Op3" Fill="#00FF0000" HorizontalAlignment="Left" Height="74" Margin="0" Stroke="White" VerticalAlignment="Top" Width="301" RadiusX="40" RadiusY="40" StrokeThickness="5"/>
+                <Button x:Name="but3" Content="C" HorizontalAlignment="Left" Height="74" Margin="0" VerticalAlignment="Top" Width="301" BorderBrush="Transparent" Click="but3_Click"/>
+            </Grid>
+            <Grid x:Name="op4" HorizontalAlignment="Left" Height="74" Margin="81,548,0,0" VerticalAlignment="Top" Width="301">
+                <Rectangle x:Name="Op4" Fill="#00FF0000" HorizontalAlignment="Left" Height="74" Margin="0" Stroke="White" VerticalAlignment="Top" Width="301" RadiusX="40" RadiusY="40" StrokeThickness="5"/>
+                <Button x:Name="but4" Content="D" HorizontalAlignment="Left" Height="74" Margin="0" VerticalAlignment="Top" Width="301" BorderBrush="Transparent" Click="but4_Click"/>
+            </Grid>
+            <TextBlock x:Name="p1" HorizontalAlignment="Left" Height="57" Margin="0,166,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="54" TextAlignment="Right"/>
+            <TextBlock x:Name="p2" HorizontalAlignment="Left" Height="57" Margin="392,166,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="54"/>
+            <TextBlock x:Name="clock" HorizontalAlignment="Left" Height="57" Margin="142,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Text="5" TextAlignment="Center"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

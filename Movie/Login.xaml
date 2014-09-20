@@ -1,0 +1,63 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Movie.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:facebookControls="clr-namespace:Facebook.Client.Controls;assembly=Facebook.Client"
+    
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Assets/2bb78f55a338ec86bc71430abe8706e5.jpg" Opacity="0.49"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="357"/>
+        </Grid.RowDefinitions>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+        </Grid>
+
+
+
+        <!-- login control -->
+        <facebookControls:LoginButton 
+           x:Name="loginbutton"
+                Margin="14,340,0,179"
+                HorizontalAlignment="Center"
+            ApplicationId="1432224830375286" SessionStateChanged="OnSessionStateChanged" Width="381" Height="99" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5"
+            >
+            <facebookControls:LoginButton.Projection>
+                <PlaneProjection CenterOfRotationY="0" CenterOfRotationX="0"/>
+            </facebookControls:LoginButton.Projection>
+            <facebookControls:LoginButton.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF506DA0"/>
+                    <GradientStop Color="#FF385588" Offset="1"/>
+                </LinearGradientBrush>
+            </facebookControls:LoginButton.Background>
+        </facebookControls:LoginButton>
+        <TextBlock 
+        	Margin="14,65,10,222"
+        	HorizontalAlignment="Center"
+        	VerticalAlignment="Center"
+        	Text="{Binding CurrentUser.Name, ElementName=loginButton}" Width="456" Height="55" FontSize="50" Grid.Row="1"/>
+        <Image x:Name="picProfile" Width="100" HorizontalAlignment="Left" Margin="12,10,0,232" Grid.Row="1" />
+        <HyperlinkButton Content="Login as guest" HorizontalAlignment="Center" Height="40" Margin="14,467,0,0" VerticalAlignment="Top" Width="261" FontSize="30" Click="HyperlinkButton_Click"/>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

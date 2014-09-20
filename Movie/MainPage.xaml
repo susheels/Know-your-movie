@@ -1,0 +1,318 @@
+﻿<phone:PhoneApplicationPage x:Class="Movie.MainPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            SupportedOrientations="Portrait"
+                            d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+                            shell:SystemTray.IsVisible="True"
+                            mc:Ignorable="d">
+
+    <!--  LayoutRoot is the root grid where all page content is placed  -->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/2bb78f55a338ec86bc71430abe8706e5.jpg"
+                        Opacity="0.49"
+                        Stretch="Fill" />
+        </Grid.Background>
+
+        <!--
+            LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+            
+            For example:
+            
+            Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+            
+            This binding points to the template's string resource named "ApplicationTitle".
+            
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+        -->
+
+        <!--  Pivot Control  -->
+        <phone:Pivot Title="Know Your Movie">
+            <!--  Pivot item one  -->
+            <phone:PivotItem Margin="0,28,0,0" Header="Categories">
+                <ScrollViewer Margin="12,0">
+                    <StackPanel>
+                        <Grid Width="451" Height="614">
+                            <Button x:Name="bw"
+                                    Width="441"
+                                    Height="290"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    Click="bw_Click"
+                                    Content="BOLLYWOOD"
+                                    FontFamily="{StaticResource PhoneFontFamilyBold}"
+                                    FontSize="50"
+                                    FontStyle="Italic"
+                                    FontWeight="Bold"
+                                    Foreground="White"
+                                    Opacity="10">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/bw.jpg"
+                                                Opacity="0.6"
+                                                Stretch="Fill" />
+                                </Button.Background>
+                            </Button>
+
+                            <Button x:Name="hw"
+                                    Width="441"
+                                    Height="290"
+                                    Margin="0,302,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    Click="hw_Click"
+                                    Content="HOLLYWOOD"
+                                    FontFamily="{StaticResource PhoneFontFamilyBold}"
+                                    FontSize="50"
+                                    FontStyle="Italic"
+                                    FontWeight="Bold"
+                                    Foreground="White">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/hw.jpg" Opacity="0.6" />
+                                </Button.Background>
+                            </Button>
+
+                        </Grid>
+
+
+                    </StackPanel>
+                </ScrollViewer>
+                <!--  Double line list with text wrapping  -->
+            </phone:PivotItem>
+
+            <!--  Pivot item two  -->
+            <phone:PivotItem Margin="0,28,0,0" Header="Profile">
+                <!--  Double line list no text wrapping  -->
+                <ScrollViewer Margin="-14,0">
+                    <StackPanel>
+                        <Grid Width="477" Height="632">
+                            <Image Width="127"
+                    			Height="115"
+                    			Margin="33,34,0,0"
+                    			HorizontalAlignment="Left"
+                    			VerticalAlignment="Top"
+                    			Source="/Assets/pp.png"
+                    			Stretch="UniformToFill" />
+                            <TextBlock Width="271"
+                    			Height="49"
+                    			Margin="95,561,0,0"
+                    			HorizontalAlignment="Left"
+                    			VerticalAlignment="Top"
+                    			FontSize="40"
+                    			FontStyle="Italic"
+                    			Text="Achievements"
+                    			TextWrapping="Wrap" FontFamily="Comic Sans MS" />
+                            <TextBlock Margin="33,328,111,251"
+                    			FontSize="30"
+                    			Text="Number of games won :" />
+                            <TextBlock x:Name="wins"
+                    			Margin="381,328,0,263"
+                    			FontSize="30"
+                    			TextAlignment="Right" />
+                            <TextBlock x:Name="g_play"
+                            	Margin="371,418,10,167"
+                            	FontSize="30"
+                            	Text=""
+                            	TextAlignment="Right" />
+                            <TextBlock Margin="33,425,89,167"
+                                       FontSize="30"
+                                       Text="Number of games played :" HorizontalAlignment="Center" VerticalAlignment="Center" Width="355" />
+
+
+                            <TextBlock x:Name="username" HorizontalAlignment="Left" Margin="198,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" Height="57" FontSize="34"/>
+                            <TextBlock x:Name="email" Margin="33,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="413" FontSize="30" HorizontalAlignment="Left"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="158,247,0,0" TextWrapping="Wrap" Text="Statistics" VerticalAlignment="Top" Width="230" FontSize="36" FontFamily="Comic Sans MS" Height="48"/>
+                        </Grid>
+                        <ScrollViewer Width="474"
+                                      Height="121"
+                                      Margin="0"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalScrollBarVisibility="Disabled">
+                            <StackPanel HorizontalAlignment="Stretch"
+                                        Background="Black"
+                                        Orientation="Horizontal">
+                                <Image x:Name="pic" Source="/Assets/locked.png" />
+                                <Image x:Name="pic0" Source="/Assets/played one game.png" />
+                                <Image x:Name="pic1" Source="/Assets/lvl10.png" />
+                                <Image x:Name="pic2" Source="/Assets/lvl20.png" />
+                                <Image x:Name="pic3" Source="/Assets/lvl30.png" />
+                                <Image x:Name="pic4" Source="/Assets/lvl40.png" />
+                                <Image x:Name="pic5" Source="/Assets/lvl50.png" />
+                                <Image x:Name="pic6" Source="/Assets/lvl60.png" />
+                                <Image x:Name="pic7" Source="/Assets/lvl70.png" />
+                                <Image x:Name="pic8" Source="/Assets/lvl80.png" />
+                                <Image x:Name="pic9" Source="/Assets/lvl90.png" />
+                                <Image x:Name="pic10" Source="/Assets/lvl100.png" />
+                            </StackPanel>
+                        </ScrollViewer>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <phone:PivotItem Margin="0,28,0,0" Header="Leaderboard">
+                <ScrollViewer Margin="-29,0,10,0">
+                    <Grid Width="477" Height="557">
+                        <Rectangle Width="209"
+                                           Height="40"
+                                           Margin="153,0,0,0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           Fill="Blue"
+                                           Stroke="White" />
+                        <Rectangle Width="121"
+                                           Height="40"
+                                           Margin="362,0,-6,0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           Fill="Blue"
+                                           Stroke="White" />
+                        <Rectangle Width="100"
+                                           Height="40"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           Fill="Blue"
+                                           Stroke="White" Margin="53,0,0,0" />
+                        <TextBlock Width="105"
+                                           Height="30"
+                                           Margin="367,10,0,0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           Foreground="White"
+                                           Text="XP"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap" RenderTransformOrigin="0.151,0.486" />
+                        <TextBlock Width="199"
+                                           Height="30"
+                                           Margin="158,10,0,0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           Foreground="White"
+                                           Text="Name"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap" />
+                        <TextBlock Width="100"
+                                           Height="30"
+                                           Margin="53,10,0,0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top"
+                                           Foreground="#DEFFFFFF"
+                                           Text="Rank"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap" RenderTransformOrigin="0.57,2.362" />
+                        <StackPanel x:Name="rankpanel"
+                                            Width="117"
+                                            Height="512"
+                                            Margin="41,45,0,0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top" >
+                            <TextBlock TextWrapping="Wrap" Text="1" HorizontalAlignment="Center"/>
+                            <TextBlock TextWrapping="Wrap" Text="2" HorizontalAlignment="Center"/>
+                            <TextBlock TextWrapping="Wrap" Text="3" HorizontalAlignment="Center"/>
+                            <TextBlock TextWrapping="Wrap" Text="4" HorizontalAlignment="Center"/>
+                            <TextBlock TextWrapping="Wrap" Text="5" HorizontalAlignment="Center"/>
+                            <TextBlock TextWrapping="Wrap" Text="6" HorizontalAlignment="Center"/>
+
+
+
+
+
+
+
+                        </StackPanel>
+                        <StackPanel x:Name="namepanel"
+                                            Width="184"
+                                            Height="512"
+                                            Margin="178,45,0,0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top" >
+                            <TextBlock x:Name="t00" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t10" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t20" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t30" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t40" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t50" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t60" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t70" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t80" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t90" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t100" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t110" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t120" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t130" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t140" TextWrapping="Wrap" Text=""/>
+                            <Button x:Name="refresh" Content="Refresh" RenderTransformOrigin="0.5,0.5" Height="69" Margin="-20,0,0,0" Click="refresh_Click"/>
+
+
+                        </StackPanel>
+                        <StackPanel x:Name="lvlpanel"
+                                            Width="101"
+                                            Height="517"
+                                            Margin="382,40,-6,0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top" >
+                            <TextBlock x:Name="t01" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t11" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t21" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t31" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t41" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t51" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t61" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t71" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t81" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t91" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t101" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t111" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t121" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t131" TextWrapping="Wrap" Text=""/>
+                            <TextBlock x:Name="t141" TextWrapping="Wrap" Text=""/>
+
+
+                        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+                    </Grid>
+                </ScrollViewer>
+                <!--  Double line list with text wrapping  -->
+            </phone:PivotItem>
+
+        </phone:Pivot>
+
+        <!--
+            Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+            
+            Before shipping remove this XAML and the image itself.
+        -->
+        <!--  <Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" />  -->
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,116 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+    x:Class="Movie.LoginPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Assets/free-movie-film-poster-the_dark_knight_movie_poster.jpg"/>
+        </Grid.Background>
+        <!--Pivot Control-->
+        <Button x:Name="nav" Content="Sign in to get started" HorizontalAlignment="Left" Height="143" Margin="-14,646,-17,-21" VerticalAlignment="Top" Width="511" Padding="0" FontWeight="Bold" Background="Black" BorderBrush="Black" Foreground="White" Click="nav_Click" BorderThickness="1"/>
+        <phone:Panorama x:Name="myPanorama" HorizontalAlignment="Left" Height="588" VerticalAlignment="Top" Width="480" Background="#B2171111" SelectionChanged="Panorama_SelectionChanged">
+
+            <phone:PanoramaItem x:Name="p1" CacheMode="{x:Null}">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Height="174" Margin="45,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" FontSize="35" TextAlignment="Center" Foreground="#DEFFFFFF">
+                    	<Run FontWeight="Bold" FontStyle="Italic" Text="WELCOME"/>
+                    	<LineBreak/>
+                    	<Run Text="to the first of its kind quiz app!"/>
+                    </TextBlock>
+                    <Image HorizontalAlignment="Left" Height="187" Margin="121,52,0,0" VerticalAlignment="Top" Width="182" Source="/trailer-icon.png"/>
+                    <TextBlock HorizontalAlignment="Left" Height="76" Margin="10,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="35" TextAlignment="Center" Text="Know Your Movie" Foreground="#DEFFFFFF"/>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem x:Name="p2" CacheMode="{x:Null}">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Height="156" Margin="10,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="35" TextAlignment="Center" Foreground="White">
+                    	<Run FontWeight="Bold" FontStyle="Italic" Text="GUESS"/>
+                    	<LineBreak/>
+                    	<Run/>
+                    	<Run Text=" the correct movie from the given"/>
+                    	<Run Text=" options!"/>
+                    </TextBlock>
+                    <Image HorizontalAlignment="Left" Height="371" Margin="10,10,0,0" VerticalAlignment="Top" Width="400" Source="/Assets/gallery TLM.png"/>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem x:Name="p3" CacheMode="{x:Null}">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Height="232" Margin="10,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="35" TextAlignment="Center" Foreground="#DEFFFFFF">
+                    	<Run FontWeight="Bold" FontStyle="Italic" Text="BONUS POINTS "/>
+                    	<LineBreak/>
+                    	<Run/>
+                    	<Run Text="are awarded if you can get it right before the audio finishes playing!"/>
+                    </TextBlock>
+                    <Image HorizontalAlignment="Left" Height="244" Margin="52,61,0,0" VerticalAlignment="Top" Width="304" Source="/Assets/22150520-bonus-grunge-rubber-stamp-on-white-vector-illustration.png"/>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem x:Name="p4" CacheMode="{x:Null}">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Height="243" Margin="10,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="35" TextAlignment="Center" Foreground="#DEFFFFFF">
+                    	<Run FontWeight="Bold" FontStyle="Italic" Text="BEWARE"/>
+                    	<LineBreak/>
+                    	<Run Text="Wrong guesses before audio clip "/>
+                    	<Run Text="has finished "/>
+                    	<Run Text="playing, will lead to negative points!"/>
+                    	<LineBreak/>
+                    	<Run/>
+                    </TextBlock>
+                    <Image HorizontalAlignment="Left" Height="173" Margin="123,83,0,0" VerticalAlignment="Top" Width="189" Source="/Assets/warning-icon-hi.png"/>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem x:Name="p5" CacheMode="{x:Null}">
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Height="157" Margin="10,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="35" TextAlignment="Center" Foreground="#DEFFFFFF">
+                    	<Run FontWeight="Bold" FontStyle="Italic" Text="SIGN IN"/>
+                    	<LineBreak/>
+                    	<Run Text="with Facebook to get started!.."/>
+                    </TextBlock>
+                    <Image HorizontalAlignment="Left" Height="179" Margin="134,84,0,0" VerticalAlignment="Top" Width="192" Source="/Assets/facebook-like-512.png"/>
+                </Grid>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+
+
+        <Grid HorizontalAlignment="Left" Height="70" Margin="0,588,0,0" VerticalAlignment="Top" Width="480" Background="#B2171111">
+            <Ellipse x:Name="e1" Fill="White" HorizontalAlignment="Left" Height="24" Margin="130,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="24"/>
+            <Ellipse x:Name="e2" Fill="White" HorizontalAlignment="Left" Height="24" Margin="180,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="24"/>
+            <Ellipse x:Name="e5" Fill="White" HorizontalAlignment="Left" Height="24" Margin="330,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="24"/>
+            <Ellipse x:Name="e4" Fill="White" HorizontalAlignment="Left" Height="24" Margin="280,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="24"/>
+            <Ellipse x:Name="e3" Fill="White" HorizontalAlignment="Left" Height="24" Margin="230,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="24"/>
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
